@@ -38,8 +38,8 @@ jobs:
           ref: gh-pages
           path: gh-pages
 
-      - name: Update "Hello World 1 2 3" App.js
-        run: echo "<h1>Hello World 1 2 3!</h1>" > gh-pages/App.js
+      - name: Update "Hello World 1 2 3 !" in index.html 
+        run: echo "<h1>Hello World 1 2 3!</h1>" > gh-pages/index.html
 
       - name: Commit and Push Changes
         run: |
