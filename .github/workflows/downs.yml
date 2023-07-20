@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: '14'
 
-      - name: Install dependencies
+      - name: Install Dependencies
         run: npm install
 
       - name: Build
@@ -29,20 +29,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Set blue color
+        run: echo "Deployed"
+
       - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           ref: gh-pages
           path: gh-pages
 
-      - name: Update "Hello World 1 2 3!" in App.js
+      - name: Update "Hello World 1 2 3" App.js
         run: echo "<h1>Hello World 1 2 3!</h1>" > gh-pages/App.js
 
       - name: Commit and Push Changes
         run: |
-          cd gh-pages
-          git config --global user.name 'GitHub Actions'
-          git config --global user.email 'actions@github.com'
-          git add .
-          git commit -m "Deploy to GitHub Pages"
-          
+            cd gh-pages
+               git config --global user.name 'GitHub Actions'
+              git config --global user.email 'actions@github.com'
+             git add .
+             git commit -m "Deploy to GitHub Pages"
